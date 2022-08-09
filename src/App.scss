@@ -1,0 +1,11 @@
+@use "./assets/sass/reset" as *;
+@use "./assets/sass/mixins" as *;
+
+.App {
+  &__container {
+    @include container;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid;
+  }
+}
