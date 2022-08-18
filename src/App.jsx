@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {useEffect} from "react";
 import "./App.scss";
+import DailyForecast from "./components/DailyForecast/DailyForecast";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -63,51 +65,19 @@ const App = () => {
     }
   }, [locationResult, latitude, longitude, API_KEY]);
 
-  const currentHour = new Date().getHours();
-  let greetingImg = "";
-  let greetingTime = "Morning";
-
-  if (currentHour >= 12) {
-    greetingImg = "";
-    greetingTime = "Afternoon";
-  }
-
-  if (currentHour >= 18) {
-    greetingImg = "";
-    greetingTime = "Evening";
-  }
-
   return (
     <div className="app">
       <div className="app__container">
-        <h1>Good {greetingTime}</h1>
+        <Header />
+
         <h3>{loading}</h3>
 
         <h2>{locationResult && locationResult[0].name}</h2>
         <p>Currently - {weather && Math.round(weather.current.temp)}&#176;C</p>
         <p>{weather && weather.current.weather[0].description}</p>
-        <div>
-          {weather &&
-            weather.daily.map((day) => {
-              const dayTime = new Date(day.dt * 1000).toDateString();
-              const temp = Math.round(day.temp.day);
-              const sunrise = new Date(day.sunrise * 1000).toTimeString().slice(0, 5);
-              const sunset = new Date(day.sunset * 1000).toTimeString().slice(0, 5);
+        <div></div>
 
-              return (
-                <div className="daily-weather" key={day.dt}>
-                  <p>{dayTime}</p>
-
-                  <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`} alt={day.weather[0].description} />
-
-                  <p>{day.weather[0].description.charAt(0).toUpperCase() + day.weather[0].description.slice(1)}</p>
-                  <p>High {temp}&#176;C </p>
-                  <p>Sunrise {sunrise}</p>
-                  <p>Sunset {sunset}</p>
-                </div>
-              );
-            })}
-        </div>
+        <DailyForecast weather={weather} />
       </div>
     </div>
   );
