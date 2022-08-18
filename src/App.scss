@@ -1,11 +1,14 @@
 @use "./assets/sass/reset" as *;
 @use "./assets/sass/mixins" as *;
+@use "./assets/sass/variables" as *;
 
 .app {
+  background-color: #624ea9;
+
   &__container {
     @include container;
     max-width: 500px;
-    margin: 5rem auto;
+    margin: auto;
     border: 1px solid;
   }
 }
@@ -13,4 +16,14 @@
 .daily-weather {
   margin: 1rem 0;
   border: 1px solid green;
+}
+
+h1,
+h2,
+h3 {
+  color: $font-color-white;
+}
+
+p {
+  color: $font-color-white;
 }
