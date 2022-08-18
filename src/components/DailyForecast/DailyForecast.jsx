@@ -1,27 +1,36 @@
 import React from "react";
+import DailyPrecipitation from "../DailyPrecipitation/DailyPrecipitation";
 import "./DailyForecast.scss";
 
 const DailyForecast = ({weather}) => {
   return (
-    <div>
+    <div className="daily">
       <h3>Daily Forecast</h3>
-      {weather &&
-        weather.daily.map((day) => {
-          const temp = Math.round(day.temp.day);
+      <div className="daily-forecast">
+        {weather &&
+          weather.daily.map((day, index) => {
+            // const temp = Math.round(day.temp.day);
+            // const rain = day.pop * 100;
 
-          return (
-            <div className="daily-forecast" key={day.dt}>
-              <p>{new Date(day.dt * 1000).toLocaleString("default", {weekday: "short"})}</p>
-              <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
+            return (
+              <>
+                <div className="daily-forecast__items" key={index}>
+                  <p className="daily-forecast__day">{new Date(day.dt * 1000).toLocaleString("default", {weekday: "short"})}</p>
+                  <img className="daily-forecast__img" src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
+                  {/* 
+                  <p>Rain</p>
+                  <p>{rain}%</p>
 
-              {/* <p>Chance of precipitation</p>
-              <p>{day.pop}%</p>
-
-              <p>Temperature</p>
-              <p>{temp}&#176;C </p> */}
-            </div>
-          );
-        })}
+                  <p>Temp</p>
+                  <p>{temp}&#176;C </p> */}
+                </div>
+              </>
+            );
+          })}
+      </div>
+      <p>Chance of precipitation</p>
+      <DailyPrecipitation weather={weather} />
+      <p>Temperature</p>
     </div>
   );
 };

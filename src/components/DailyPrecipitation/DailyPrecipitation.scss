@@ -10,11 +10,10 @@
   }
 }
 
-.daily-forecast {
-  // display: flex;
-  // justify-content: space-between;
-  // gap: 0.5rem;
-
+.daily-precip {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 

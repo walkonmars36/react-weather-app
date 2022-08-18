@@ -1,0 +1,11 @@
+@use "./variables" as *;
+
+h1,
+h2,
+h3 {
+  color: $font-color-white;
+}
+
+p {
+  color: $font-color-white;
+}
