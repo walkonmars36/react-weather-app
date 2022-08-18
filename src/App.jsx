@@ -82,7 +82,7 @@ const App = () => {
       <div className="app__container">
         <h1>Good {greetingTime}</h1>
         <h3>{loading}</h3>
-        <h3>Here is the current weather for...</h3>
+
         <h2>{locationResult && locationResult[0].name}</h2>
         <p>Currently - {weather && Math.round(weather.current.temp)}&#176;C</p>
         <p>{weather && weather.current.weather[0].description}</p>
