@@ -18,7 +18,7 @@ const Header = () => {
 
   const dayTime = new Date().toDateString();
   return (
-    <div>
+    <div className="header">
       <h3>{dayTime}</h3>
       <h3>Good {greetingTime}</h3>
     </div>

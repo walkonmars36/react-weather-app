@@ -1,8 +1,6 @@
 @use "../../assets/sass/variables" as *;
 
 .daily {
-  height: 100vh;
-
   > h3 {
     margin-top: 3rem;
     border-bottom: 1px solid $font-color-white;
@@ -10,11 +8,10 @@
   }
 }
 
-.daily-forecast {
-  // display: flex;
-  // justify-content: space-between;
-  // gap: 0.5rem;
-
+.daily-precip {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 

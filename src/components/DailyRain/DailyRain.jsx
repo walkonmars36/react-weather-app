@@ -1,15 +1,17 @@
 import React from "react";
-import "./DailyPrecipitation.scss";
+import "./DailyRain.scss";
 
-const DailyPrecipitation = ({weather}) => {
+const DailyRain = ({weather}) => {
   return (
     <div className="daily">
       <div className="daily-precip">
         {weather &&
           weather.daily.map((day, index) => {
+            const rain = (day.pop * 100).toFixed(0);
+
             return (
               <div className="daily-precip__items" key={index}>
-                <p className="daily-precip__day">{day.pop * 100}%</p>
+                <p className="daily-precip__day">{rain}%</p>
               </div>
             );
           })}
@@ -18,4 +20,4 @@ const DailyPrecipitation = ({weather}) => {
   );
 };
 
-export default DailyPrecipitation;
+export default DailyRain;

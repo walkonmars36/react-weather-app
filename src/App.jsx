@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {useEffect} from "react";
 import "./App.scss";
-import DailyForecast from "./components/DailyForecast/DailyForecast";
 import Header from "./components/Header/Header";
+import CurrentWeather from "./containers/CurrentWeather/CurrentWeather";
+import DailyForecast from "./containers/DailyForecast/DailyForecast";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -72,10 +73,7 @@ const App = () => {
 
         <h3>{loading}</h3>
 
-        <h2>{locationResult && locationResult[0].name}</h2>
-        <p>Currently - {weather && Math.round(weather.current.temp)}&#176;C</p>
-        <p>{weather && weather.current.weather[0].description}</p>
-        <div></div>
+        <CurrentWeather locationResult={locationResult} weather={weather} />
 
         <DailyForecast weather={weather} />
       </div>
