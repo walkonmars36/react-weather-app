@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import {useEffect} from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import CurrentWeather from "./containers/CurrentWeather/CurrentWeather";
-import DailyForecast from "./containers/DailyForecast/DailyForecast";
-import HourlyForecast from "./containers/HourlyForecast/HourlyForecast";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
+import DailyForecast from "./components/DailyForecast/DailyForecast";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
