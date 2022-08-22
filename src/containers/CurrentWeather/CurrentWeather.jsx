@@ -1,10 +1,11 @@
 import React from "react";
 import "./CurrentWeather.scss";
 
-const CurrentWeather = ({locationResult, weather}) => {
+const CurrentWeather = ({locationResult, weather, loading}) => {
   return (
     <div className="current-weather">
-      <h2>Here's the weather in {locationResult && locationResult[0].name}</h2>
+      <h2>{loading}</h2>
+      {locationResult && <h2>Here's the weather in {locationResult[0].name}</h2>}
 
       <div className="current-weather__location">
         <div className="current-weather__location--left">

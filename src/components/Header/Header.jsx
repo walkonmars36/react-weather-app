@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <div className="header">
       <h3>{dayTime}</h3>
-      <h3>Good {greetingTime}</h3>
+      <h3 className="header__greeting">Good {greetingTime}</h3>
     </div>
   );
 };

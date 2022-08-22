@@ -67,14 +67,14 @@ const App = () => {
     }
   }, [locationResult, latitude, longitude, API_KEY]);
 
+  console.log(weather);
+
   return (
     <div className="app">
       <div className="app__container">
         <Header />
 
-        <h3>{loading}</h3>
-
-        <CurrentWeather locationResult={locationResult} weather={weather} />
+        <CurrentWeather locationResult={locationResult} weather={weather} loading={loading} />
 
         <HourlyForecast weather={weather} />
 
