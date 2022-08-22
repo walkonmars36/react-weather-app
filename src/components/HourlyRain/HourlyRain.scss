@@ -1,8 +1,6 @@
 @use "../../assets/sass/variables" as *;
 
 .daily {
-  // height: 100vh;
-
   > h3 {
     margin-top: 3rem;
     border-bottom: 1px solid $font-color-white;
@@ -10,7 +8,10 @@
   }
 }
 
-.daily-forecast {
+.daily-precip {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 
@@ -19,6 +20,6 @@
     flex-direction: column;
     column-gap: 1rem;
     align-items: center;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
   }
 }

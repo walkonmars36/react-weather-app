@@ -4,6 +4,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import CurrentWeather from "./containers/CurrentWeather/CurrentWeather";
 import DailyForecast from "./containers/DailyForecast/DailyForecast";
+import HourlyForecast from "./containers/HourlyForecast/HourlyForecast";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -74,6 +75,8 @@ const App = () => {
         <h3>{loading}</h3>
 
         <CurrentWeather locationResult={locationResult} weather={weather} />
+
+        <HourlyForecast weather={weather} />
 
         <DailyForecast weather={weather} />
       </div>

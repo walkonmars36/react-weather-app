@@ -1,0 +1,28 @@
+@use "../../assets/sass/variables" as *;
+
+.hourly {
+  // height: 100vh;
+
+  > h3 {
+    margin-top: 3rem;
+    border-bottom: 1px solid $font-color-white;
+    padding-bottom: 1rem;
+  }
+}
+
+.hourly-forecast {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill);
+  grid-auto-flow: column;
+  grid-auto-columns: repeat(auto-fill);
+  overflow-x: auto;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
+}
