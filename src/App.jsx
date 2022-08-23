@@ -12,6 +12,8 @@ const App = () => {
   const [longitude, setLongitude] = useState(null);
   const [locationResult, setLocationResult] = useState(null);
   const [weather, setWeather] = useState(null);
+  const [greetingTime, setGreetingTime] = useState("");
+  const [bgColor, setBgColor] = useState("");
 
   const API_KEY = process.env.REACT_APP_API_KEY;
   const GEO_KEY = process.env.REACT_APP_GEO_KEY;
@@ -67,12 +69,29 @@ const App = () => {
     }
   }, [locationResult, latitude, longitude, API_KEY]);
 
-  console.log(weather);
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+    let greetingTime = "Morning";
+    let bgColorClass = "app__bg--morning";
+
+    if (currentHour >= 12) {
+      greetingTime = "Afternoon";
+      bgColorClass = "app__bg--afternoon";
+    }
+
+    if (currentHour >= 18) {
+      greetingTime = "Evening";
+      bgColorClass = "app__bg--evening";
+    }
+
+    setGreetingTime(greetingTime);
+    setBgColor(bgColorClass);
+  }, []);
 
   return (
-    <div className="app">
+    <div className={"app " + bgColor}>
       <div className="app__container">
-        <Header />
+        <Header greetingTime={greetingTime} />
         <CurrentWeather locationResult={locationResult} weather={weather} loading={loading} />
         <HourlyForecast weather={weather} />
         <DailyForecast weather={weather} />
