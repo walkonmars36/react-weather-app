@@ -16,8 +16,8 @@ const HourlyForecast = ({weather}) => {
               const temp = Math.round(hour.temp);
 
               return (
-                <>
-                  <div className="hourly-forecast__items" key={index}>
+                <div key={index}>
+                  <div className="hourly-forecast__items">
                     <p className="hourly-forecast__hour">{hoursAndMinutes}</p>
                     <img className="hourly-forecast__img" src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt={hour.weather[0].description} />
                     <p>Rain?</p>
@@ -25,7 +25,7 @@ const HourlyForecast = ({weather}) => {
                     <p className="hourly-forecast__temp">Temp</p>
                     <p>{temp}&#176;</p>
                   </div>
-                </>
+                </div>
               );
             })
             .slice(0, 24)}
