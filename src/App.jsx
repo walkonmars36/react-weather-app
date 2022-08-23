@@ -73,11 +73,8 @@ const App = () => {
     <div className="app">
       <div className="app__container">
         <Header />
-
         <CurrentWeather locationResult={locationResult} weather={weather} loading={loading} />
-
         <HourlyForecast weather={weather} />
-
         <DailyForecast weather={weather} />
       </div>
     </div>

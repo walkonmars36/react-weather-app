@@ -1,44 +1,32 @@
 .current-weather {
   margin-top: 3rem;
   background-color: #524588;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem;
   border-radius: 10px;
-
-  img {
-    border: none;
-    background-color: #ccc;
-    background-clip: border-box;
-  }
 
   &__location {
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ccc;
     align-items: center;
+    margin-top: 1rem;
 
-    &--left,
-    &--right {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &--left {
-      border: 1px solid yellow;
+    &-left {
+      > p {
+        line-height: 1.1;
+      }
 
       &-degrees {
         font-size: 6rem;
         font-weight: bold;
-        border: 1px solid red;
       }
     }
   }
 
   &__rise-set {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     font-size: 14px;
     margin-top: 2rem;
-    border: 1px solid #ccc;
   }
 }
