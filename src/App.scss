@@ -6,6 +6,10 @@
 .app {
   background-color: #624ea9;
 
+  &__bg--afternoon {
+    background-color: blue;
+  }
+
   &__container {
     @include container;
     max-width: 500px;

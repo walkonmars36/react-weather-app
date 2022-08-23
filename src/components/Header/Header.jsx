@@ -1,18 +1,18 @@
 import React from "react";
 import "./Header.scss";
 
-const Header = () => {
-  const currentHour = new Date().getHours();
+const Header = ({greetingTime}) => {
+  // const currentHour = new Date().getHours();
 
-  let greetingTime = "Morning";
+  // let greetingTime = "Morning";
 
-  if (currentHour >= 12) {
-    greetingTime = "Afternoon";
-  }
+  // if (currentHour >= 12) {
+  //   greetingTime = "Afternoon";
+  // }
 
-  if (currentHour >= 18) {
-    greetingTime = "Evening";
-  }
+  // if (currentHour >= 18) {
+  //   greetingTime = "Evening";
+  // }
 
   const dayTime = new Date().toDateString();
   return (
