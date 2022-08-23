@@ -4,10 +4,17 @@
 @use "./assets/sass/base" as *;
 
 .app {
-  background-color: #624ea9;
+  &__bg--morning {
+    background-color: #50b7fc;
+  }
 
   &__bg--afternoon {
-    background-color: blue;
+    // background-color: #f7b801;
+    background-color: #fc9753;
+  }
+
+  &__bg--evening {
+    background-color: #a0261d;
   }
 
   &__container {
