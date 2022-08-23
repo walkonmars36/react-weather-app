@@ -1,8 +1,6 @@
 @use "../../assets/sass/variables" as *;
 
 .hourly {
-  // height: 100vh;
-
   > h3 {
     margin-top: 3rem;
     border-bottom: 1px solid $font-color-white;
@@ -27,7 +25,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: 1px solid #ccc;
   }
 
   &__temp {

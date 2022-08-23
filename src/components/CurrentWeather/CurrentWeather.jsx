@@ -5,7 +5,7 @@ const CurrentWeather = ({locationResult, weather, loading}) => {
   return (
     <div className="current-weather">
       <h2>{loading}</h2>
-      {locationResult && <h2>Here's the weather in {locationResult[0].name}</h2>}
+      {locationResult && <h2 className="current-weather__heading">Here's the weather in {locationResult[0].name}</h2>}
 
       <div className="current-weather__location">
         <div className="current-weather__location-left">
@@ -15,7 +15,7 @@ const CurrentWeather = ({locationResult, weather, loading}) => {
         </div>
 
         <div className="current-weather__location-right">
-          {weather && <img className="current-weather__location-right-img" src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`} alt="blah" />}
+          {weather && <img className="current-weather__location-right-img" src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`} alt={weather.current.weather[0].description} />}
           <p>feels like {weather && Math.trunc(weather.current.feels_like)}&#176;</p>
           <p>windspeed {weather && Math.trunc(weather.current.wind_speed)} km/h</p>
         </div>

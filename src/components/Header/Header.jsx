@@ -3,16 +3,14 @@ import "./Header.scss";
 
 const Header = () => {
   const currentHour = new Date().getHours();
-  let greetingImg = "";
+
   let greetingTime = "Morning";
 
   if (currentHour >= 12) {
-    greetingImg = "";
     greetingTime = "Afternoon";
   }
 
   if (currentHour >= 18) {
-    greetingImg = "";
     greetingTime = "Evening";
   }
 
