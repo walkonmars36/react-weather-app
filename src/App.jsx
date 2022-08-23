@@ -79,7 +79,7 @@ const App = () => {
       bgColorClass = "app__bg--afternoon";
     }
 
-    if (currentHour >= 18) {
+    if (currentHour >= 16) {
       greetingTime = "Evening";
       bgColorClass = "app__bg--evening";
     }
