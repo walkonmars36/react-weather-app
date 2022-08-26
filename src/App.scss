@@ -5,15 +5,23 @@
 
 .app {
   &__bg--morning {
-    background-color: #50b7fc;
+    background-color: #80d0c7;
+    background-image: linear-gradient(160deg, #80d0c7 0%, #0093e9 100%);
   }
 
   &__bg--afternoon {
-    background-color: #357266;
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #0093e9 23%, #fc971a 61%, #fc971a 97%);
   }
 
   &__bg--evening {
-    background-color: #e1a901;
+    background-color: #fc971a;
+    background-image: linear-gradient(160deg, #fc971a 0%, #fa371d 33%, #ad012d 66%, #46003b 100%);
+  }
+
+  &__bg--night {
+    background-color: #46003b;
+    background-image: linear-gradient(160deg, #46003b 0%, #0d0127 50%, #010006 100%);
   }
 
   &__container {
