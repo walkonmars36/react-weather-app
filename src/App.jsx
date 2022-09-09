@@ -41,7 +41,7 @@ const App = () => {
   // reverse geocoding
   useEffect(() => {
     if (latitude && longitude)
-      fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${GEO_KEY}`)
+      fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${GEO_KEY}`)
         .then((response) => response.json())
         .then((data) => {
           setLocationResult(data);
