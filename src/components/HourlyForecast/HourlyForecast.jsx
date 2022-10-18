@@ -19,7 +19,7 @@ const HourlyForecast = ({weather}) => {
                 <div key={index}>
                   <div className="hourly-forecast__items">
                     <p className="hourly-forecast__hour">{hoursAndMinutes}</p>
-                    <img className="hourly-forecast__img" src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt={hour.weather[0].description} />
+                    <img className="hourly-forecast__img" src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt={hour.weather[0].description} />
                     <p>Rain?</p>
                     <p>{rain}&#37; </p>
                     <p className="hourly-forecast__temp">Temp</p>

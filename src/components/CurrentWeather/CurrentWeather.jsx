@@ -15,7 +15,7 @@ const CurrentWeather = ({locationResult, weather, loading}) => {
         </div>
 
         <div className="current-weather__location-right">
-          {weather && <img className="current-weather__location-right-img" src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`} alt={weather.current.weather[0].description} />}
+          {weather && <img className="current-weather__location-right-img" src={`https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`} alt={weather.current.weather[0].description} />}
           <p>feels like {weather && Math.trunc(weather.current.feels_like)}&#176;</p>
           <p>windspeed {weather && Math.trunc(weather.current.wind_speed)} km/h</p>
         </div>

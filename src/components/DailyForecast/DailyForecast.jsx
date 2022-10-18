@@ -16,7 +16,7 @@ const DailyForecast = ({weather}) => {
               <div key={index}>
                 <div className="daily-forecast__items">
                   <p className="daily-forecast__day">{new Date(day.dt * 1000).toLocaleString("default", {weekday: "short"})}</p>
-                  <img className="daily-forecast__img" src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
+                  <img className="daily-forecast__img" src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt={day.weather[0].description} />
                   <p>Rain?</p>
                   <p>{rain}&#37;</p>
                   <p className="daily-forecast__temp">Temp</p>
